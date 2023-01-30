@@ -8,17 +8,18 @@
 # 385916 -> yes
 # 123456 -> no
 
-t = 123456
-sum1=0
-sum2=0
-t1 = t%1000
+t = int(input("Enter ticket number: "))
+sum1 = 0
+sum2 = 0
+t1 = t % 1000
 t2 = t//1000
-while t1>0:
-    sum1+=t1%10
-    t1=t1//10
-while t2>0:
-    sum2+=t2%10
-    t2=t2//10  
-if sum1==sum2:
+while t1 > 0:
+    sum1 += t1 % 10
+    t1 = t1//10
+while t2 > 0:
+    sum2 += t2 % 10
+    t2 = t2//10
+if sum1 == sum2:
     print("Yes")
-else: print("No")    
+else:
+    print("No")
