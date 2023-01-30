@@ -12,4 +12,6 @@ k=2
 if n*m%2==k%2 or k%n==0 or k%m==0:
     print("Yes")
 else:
-    print("no")    
+    print("No")
+    
+    
