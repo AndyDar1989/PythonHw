@@ -8,8 +8,10 @@
 # 24 -> 4 16 4
 # 60 -> 10 40 10
 
-a = 60
-ps = int(a/6)
-k = int(ps*2*2)
-
-print(ps, k, ps)
+s = int(input("Enter number S: "))
+if s % 3 != 0:
+    print("incorrect count")
+else:
+    p_s = int(s/6)
+    k = int(p_s*2*2)
+    print("Peter - {}, Kate - {}, Sergei - {}".format(p_s, k, p_s))
