@@ -9,7 +9,7 @@
 # 60 -> 10 40 10
 
 s = int(input("Enter number S: "))
-if s % 3 != 0:
+if s % 6 != 0:
     print("incorrect count")
 else:
     p_s = int(s/6)
