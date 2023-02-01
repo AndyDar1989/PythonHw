@@ -9,7 +9,7 @@ n = 3
 m = 3
 k = 2
 
-if n*m % 2 == k % 2 or k % n == 0 or k % m == 0:
+if n*m > k and (k % n == 0 or k % m == 0):
     print("Yes")
 else:
     print("No")
