@@ -7,12 +7,19 @@
 # 5 6 -> 2 3
 
 
-def numbers_guess(s, m):
-    x = 0
-    while s*x-x**2 != m:
-        x += 1
-    y = s-x
-    return x, y
+def find_numbers(sum_num, mult_num):
+    num_1 = 0
+    flag = True
+    while flag:
+        if sum_num*num_1-num_1**2 == mult_num and num_1 <= 1000:
+            flag = False
+            num_2 = sum_num-num_1
+            return num_1, num_2
+        elif num_1 > 1000:
+            flag = False
+            return -1
+        else:
+            num_1 += 1
 
 
-print(numbers_guess(4, 4))
+print(find_numbers(4, 4))

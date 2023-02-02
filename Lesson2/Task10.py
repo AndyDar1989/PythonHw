@@ -8,22 +8,21 @@
 
 from random import randint
 
-def eagle_tails(n):
-    zero_count, one_count = 0,0
+
+def min_move_numbers(n):
+    zero_counter, one_counter = 0, 0
     for _ in range(n):
-        val = randint(0,1)
+        val = randint(0, 1)
         print(val, end=' ')
-        if val==0:
-            zero_count+=1
-        if val==1:
-            one_count +=1
-    print()        
-    if zero_count>one_count:
-        print(one_count)
+        if val == 0:
+            zero_counter += 1
+        if val == 1:
+            one_counter += 1
+    print()
+    if zero_counter > one_counter:
+        print(one_counter)
     else:
-        print(zero_count)
-        
-        
-eagle_tails(6)                        
-            
-        
+        print(zero_counter)
+
+
+min_move_numbers(2)
