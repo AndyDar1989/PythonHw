@@ -16,7 +16,7 @@ def min_move_numbers(n):
         print(val, end=' ')
         if val == 0:
             zero_counter += 1
-        if val == 1:
+        elif val == 1:
             one_counter += 1
     print()
     if zero_counter > one_counter:
