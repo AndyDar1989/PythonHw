@@ -9,17 +9,14 @@
 
 def find_numbers(sum_num, mult_num):
     num_1 = 0
-    flag = True
-    while flag:
+    while True:
         if sum_num*num_1-num_1**2 == mult_num and num_1 <= 1000:
-            flag = False
             num_2 = sum_num-num_1
             return num_1, num_2
         elif num_1 > 1000:
-            flag = False
             return -1
         else:
             num_1 += 1
 
 
-print(find_numbers(4, 4))
+print(find_numbers(990, 542))
