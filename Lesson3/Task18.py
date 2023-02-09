@@ -13,16 +13,18 @@ from random_list import random_list
 
 def closest_number(user_list, user_number):
     min_diff = user_number
+    cl_num = set()
     for i in user_list:
-        diff = user_number-i
+        diff = abs(user_number-i)
         if diff < 0:
             diff *= -1
         if diff < min_diff:
             min_diff = diff
-    cl_num = set()
-    for i in user_list:
-        if user_number-i == min_diff or user_number-i == -min_diff:
             cl_num.add(i)
+    # cl_num = set()
+    # for i in user_list:
+    #     if user_number-i == min_diff or user_number-i == -min_diff:
+    #         cl_num.add(i)
     return cl_num
 
 
