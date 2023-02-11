@@ -12,7 +12,7 @@ def user_enter(x):
 
 
 def sort_set(list_1, list_2):
-    sort_set = set(list_1).union(set(list_2))
+    sort_set = set(list_1).intersection(set(list_2))
     return sort_set
 
 
@@ -20,7 +20,7 @@ n = int(input('Enter number of the elements for the first set: '))
 m = int(input('Enter number of the elements for the first set: '))
 
 my_list_1 = user_enter(n)
-# print(my_list_1)
+print(my_list_1)
 my_list_2 = user_enter(m)
-# print(my_list_2)
+print(my_list_2)
 print(sort_set(my_list_1, my_list_2))
