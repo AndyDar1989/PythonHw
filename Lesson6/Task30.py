@@ -10,7 +10,7 @@
 # Вывод: 7 9 11 13 15
 
 def progress(a_first,d,count_elem):
-    return [a_first+(i-1)*d for i in range(1, count_elem+1)]
+    return [a_first+i*d for i in range(count_elem)]
 
 print(progress(7,2,5))
     
