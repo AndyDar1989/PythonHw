@@ -16,7 +16,7 @@
 
 def print_operation_table(operation, num_rows, num_columns):
     for i in range(1, num_rows+1):
-        print(*[operation(i, j) for j in range(1, num_columns+1)])
+        print("".join(f'{operation(i, j):3}' for j in range(1, num_columns+1)))
 
 
 a = int(input('Enter value A: '))
