@@ -12,24 +12,11 @@
 
 def find_rhytm(user_poem):
     poem = user_poem.split()
-    
-    counter = sum(1 for f in poem[0] if f in'аеиоуэюя')
-    print(counter)
+    counter = sum(1 for f in poem[0] if f in 'аеиоуэюя')
     for frase in range(1, len(poem)):
-        if sum(1 for f in poem[frase] if f in 'аеиоуэюя')!=counter:
+        if sum(1 for f in poem[frase] if f in 'аеиоуэюя') != counter:
             return 'Пам парам'
     return 'Парам пам-пам'
 
 
-def find_rhytm_2(user_poem):
-    poem = user_poem.split()
-    counter = poem[0].count('а')
-    for frase in range(1, len(poem)):
-        if poem[frase].count('а')!=counter:
-            return 'Пам парам'
-    return 'Парам пам-пам'
-
-
-vinnies_poem = input('Enter your poem: ')
-
-print(find_rhytm(vinnies_poem))
+print(find_rhytm(input('Enter your poem: ')))
