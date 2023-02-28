@@ -91,7 +91,7 @@ def delete_contact(file, del_contact):
 
 
 def main_menu():
-    file_contacts = 'C:file.txt'
+    file_contacts = 'phonebook.txt'
     while True:
         user_choice = input('1 - добавить новый контакт,\n'
                             '2 - найти контакт,\n'
@@ -110,8 +110,9 @@ def main_menu():
             print(res)
         elif user_choice == '3':
             # print('посмотреть весь справочник')
-            
-            print(contacts for contacts in read_file(file_contacts))
+            all_list = read_file(file_contacts)
+            for i in all_list:
+                print(i)
         elif user_choice == '4':
             lst_contacts = read_file(file_contacts)
             search_param, what = ask_search()
