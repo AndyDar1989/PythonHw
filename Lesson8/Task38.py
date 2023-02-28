@@ -32,9 +32,9 @@ def search_contact(list_contacts: list, param: str, what: str):
     for contact in list_contacts:
         if contact[param_dict[param]] == what:
             found_contacts.append(contact)
-    if found_contacts==[]:
+    if found_contacts == []:
         print('Данные не найдены')
-        return main_menu()      
+        return main_menu()
     return found_contacts
 
 
@@ -51,16 +51,15 @@ def ask_search():
         what = input('Введите номер для поиска: ')
     else:
         print('Неверный выбор, повторите')
-        return ask_search()    
+        return ask_search()
     return search_param, what
 
 
-def change_contact(file,ch_contact):
-
+def change_contact(file, ch_contact):
     change_pos = input('Выберите пункт, который хотите изменить?: ')
     if change_pos not in '123':
         print('Неверный выбор, повторите')
-        return change_contact(file,ch_contact)
+        return change_contact(file, ch_contact)
     else:
         new_data = input('Внесите изменения: ')
         with open(file, 'r', encoding='utf-8') as data:
@@ -78,13 +77,11 @@ def change_contact(file,ch_contact):
                         contact[i] = ' '.join(new_contact)
                         data.write(f'{contact[i]}\n')
                     else:
-                        data.write(contact[i])           
-                        
-        #return contact
+                        data.write(contact[i])
 
 
 def delete_contact(file, del_contact):
-    #del_contact = input('Хотите удалить?: ')
+    # del_contact = input('Хотите удалить?: ')
     with open(file, 'r', encoding='utf-8') as data:
         contact = data.readlines()
         with open(file, 'w', encoding='utf-8') as data:
@@ -94,7 +91,7 @@ def delete_contact(file, del_contact):
 
 
 def main_menu():
-    file_contacts = 'file.txt'
+    file_contacts = 'C:file.txt'
     while True:
         user_choice = input('1 - добавить новый контакт,\n'
                             '2 - найти контакт,\n'
@@ -113,20 +110,21 @@ def main_menu():
             print(res)
         elif user_choice == '3':
             # print('посмотреть весь справочник')
-            print(read_file(file_contacts))
+            
+            print(contacts for contacts in read_file(file_contacts))
         elif user_choice == '4':
             lst_contacts = read_file(file_contacts)
             search_param, what = ask_search()
             res = search_contact(lst_contacts, search_param, what)
             print(res)
-            change_contact(file_contacts,what)
+            change_contact(file_contacts, what)
             print('Запись изменена')
         elif user_choice == '5':
             lst_contacts = read_file(file_contacts)
             search_param, what = ask_search()
             res = search_contact(lst_contacts, search_param, what)
-            print(res)    
-            delete_contact(file_contacts,what)
+            print(res)
+            delete_contact(file_contacts, what)
             print('Запись удалена')
         elif user_choice == '0':
             print('До свидания')
